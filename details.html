@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Détails du Billard</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .details-container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+      color: #e0e0e0;
+      text-align: center;
+    }
+
+    .details-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      margin-top: 30px;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 40px;
+      padding: 10px 25px;
+      background-color: #4b3621;
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+    }
+
+    .btn-back:hover {
+      background-color: #2f2217;
+    }
+  </style>
+  
+</head>
+<script>
+  function ajouterAuPanier() {
+    // Création de l'objet produit
+    const produit = {
+      id: 1,
+      nom: "Table de Billard Artisanale",
+      prix: 1490.00,
+      image: "images/billard1.jpg",
+      quantite: 1
+    };
+
+    // Récupère le panier actuel
+    let panier = JSON.parse(localStorage.getItem("panier")) || [];
+
+    // Vérifie si le produit est déjà dans le panier
+    const index = panier.findIndex(item => item.id === produit.id);
+    if (index !== -1) {
+      panier[index].quantite += 1;
+    } else {
+      panier.push(produit);
+    }
+
+    // Sauvegarde dans le localStorage
+    localStorage.setItem("panier", JSON.stringify(panier));
+
+    // Affiche une notification visuelle
+    const notif = document.getElementById("notif-panier");
+    notif.classList.remove("hidden");
+    notif.classList.add("show");
+
+    setTimeout(() => {
+      notif.classList.remove("show");
+      notif.classList.add("hidden");
+    }, 3000);
+  }
+</script>
+
+
+<script>
+  // Attendre que le DOM soit prêt
+  document.addEventListener("DOMContentLoaded", function() {
+    const thumbnails = document.querySelectorAll(".thumb");
+    const mainImage = document.getElementById("mainImage");
+
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener("click", function() {
+        mainImage.src = this.src;
+      });
+    });
+  });
+</script>
+
+<body style="background-color: #1b1b1b;">
+
+  <nav class="navbar">
+    <div class="logo">Billard Heritage</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Accueil</a></li>
+    <!--  <li><a href="panier.html">Panier</a></li> -->
+      <li><a href="about.html">Qui sommes-nous</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <section class="product-detail">
+    <div class="gallery">
+      <div class="main-image">
+        <img id="mainImage" src="billard4.png" alt="Billard principal">
+      </div>
+      <div class="thumbnails">
+      <!--  <img class="thumb" src="billard4.png" alt="Vue 1">
+         Ajoute d’autres images ici -->
+      </div>
+    </div>
+  
+    <div class="product-info">
+      <h1>Billard Héritage</h1>
+      <p class="price">Gravé au nom de l'acheteur</p>
+      <ul class="features">
+        <!--  <li>Bois massif haut de gamme</li>
+          <li>Tapis vert anglais professionnel</li>-->
+        <li>Derrière sa sobriété, il révèle un symbole puissant. </li>
+        <br/>
+        <li>Contactez-nous pour obtenir de plus ample informations,</li>
+        <li> tester votre éligibilité et entrer dans un cercle reservé.</li>
+      </ul>
+  
+      <div class="actions">
+      <!--  <a href="#" class="btn-panier" onclick="ajouterAuPanier()">Ajouter au panier</a> -->
+        <a href="mailto:billardheritage@gmail.com" class="btn-contact">Commander votre billard</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="details-container">
+    
+  <a href="index.html" class="btn-back">Retour</a>
+</div>
+  <footer>
+    <p>&copy; 2025 Billard Héritage. Tous droits réservés.</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+
+</body>
+</html>
+

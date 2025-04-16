@@ -1,0 +1,372 @@
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background-color: #1b1b1b;
+  color: #e0e0e0;
+  scroll-behavior: smooth;
+}
+/* Ajoute ça à la section contact pour éviter qu'elle dépasse */
+.navbar {
+  max-width: 100%;
+  margin: 0 auto; /* Centre la section */
+  padding: 40px 20px;
+  box-sizing: border-box;
+  overflow-x: hidden; /* Évite que le contenu dépasse à droite */
+}
+
+/* Pour éviter un débordement de l'image et autres éléments */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Pas de débordement horizontal */
+}
+
+/* Optionnel : ajouter une largeur maximale à la section contact pour qu'elle ne soit pas trop large */
+.contact {
+  max-width: 1200px;
+  margin: 0 auto; /* Centrer la section */
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #111;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  z-index: 999;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #4b3621;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 1em;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #4b3621;
+}
+
+/* Décalage pour que la section ne passe pas sous la navbar */
+section {
+  scroll-margin-top: 100px;
+}
+
+.hero {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centre horizontalement */
+  justify-content: center; /* centre verticalement si tu veux */
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.hero-image {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 0 auto; /* centre l'image horizontalement */
+  border-radius: 16px; /* arrondi si tu veux un effet stylé */
+  margin-top : 70px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  margin-top: 20px;
+}
+
+.hero h1,
+.hero p {
+  margin: 10px 0;
+}
+
+
+.hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* léger assombrissement */
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+  max-width: 80%;        /* ← largeur alignée avec l'image */
+  margin: 0 auto;        /* ← centré automatiquement */
+  box-sizing: border-box;
+}
+
+.hero-content h1 {
+  font-size: 2.2rem; /* ↓ taille du titre */
+  margin-bottom: 0.5em;
+}
+
+.hero-content p {
+  font-size: 1.1rem; /* ↓ taille du sous-titre */
+  margin-bottom: 1em;
+}
+
+
+.hero-content .btn {
+  padding: 12px 30px;
+  background-color: #4b3621;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.hero-content .btn:hover {
+  background-color: #2f2217;
+}
+
+section {
+  padding: 80px 20px;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px 0;
+}
+
+.contact .btn {
+  background-color: #2f4f2f;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background-color: #111;
+  color: #777;
+}
+
+/* Animation */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease, transform 2s ease; /* ← ici, 2s au lieu de 1s */
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.panier-item button {
+  font-size: 1.1rem;
+  margin-left: 1rem;
+}
+
+.btn-panier {
+  background-color: #3e2e1c; /* brun sombre */
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-panier:hover {
+  background-color: #523c24;
+  transform: scale(1.05);
+}
+
+.btn-contact {
+  background-color: #523c24; /* brun clair */ 
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+  display: inline-block;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.btn-contact:hover {
+  background-color: #3e2e1c;
+  transform: scale(1.05);
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px 0;
+}
+
+.carousel-track {
+  display: flex;
+  width: calc(8 * 300px); /* 8 images de 300px */
+  animation: defilement 30s linear infinite;
+}
+
+.carousel-track img {
+  height: 200px; /* ou une autre hauteur qui rend bien */
+  width: auto;   /* conserve les proportions naturelles */
+  margin: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  object-fit: contain;
+}
+
+@keyframes defilement {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.texte-centre {
+  text-align: center;
+}
+.bouton-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px; /* espace au-dessus du bouton si besoin */
+}
+
+
+.product-detail {
+  display: flex;
+  gap: 40px;
+  padding: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.gallery {
+  max-width: 500px;
+}
+
+.main-image img {
+  width: 100%;
+  border-radius: 10px;
+  margin-top : 70px;
+}
+
+.thumbnails {
+  display: flex;
+  margin-top: 15px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.thumbnails img {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: transform 0.2s;
+}
+
+.thumbnails img:hover {
+  transform: scale(1.05);
+}
+
+.product-info {
+  max-width: 500px;
+  color: #fff;
+}
+
+.price {
+  font-size: 1.8rem;
+  color: #bfa76f;
+  margin: 10px 0;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+.features li {
+  margin-bottom: 8px;
+}
+
+.actions .btn, .btn-secondary {
+  display: inline-block;
+  padding: 10px 25px;
+  margin-right: 10px;
+  border-radius: 30px;
+  background-color: #4c371f;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.actions .btn:hover,
+.actions .btn-secondary:hover {
+  background-color: #6c4b2c;
+}
+
+.notif {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4c371f;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 999;
+  font-weight: bold;
+}
+
+.notif.show {
+  opacity: 1;
+}
+
+.notif.hidden {
+  display: none;
+}
